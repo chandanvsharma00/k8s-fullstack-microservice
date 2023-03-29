@@ -1,0 +1,16 @@
+config:
+  target: "http://104.200.27.210"
+  phases:
+  # - duration: 90
+  #   arrivalRate: 100
+  - duration: 60
+    arrivalRate: 700
+  payload:
+    skipHeader: true
+    path: "ids.csv"
+    fields:
+      - "space"
+scenarios:
+  - flow:
+    - get:
+        url: "/buildings/{{ space }}"
